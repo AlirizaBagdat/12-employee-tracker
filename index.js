@@ -1,6 +1,9 @@
 // Import required modules
+// const inquirer = require('inquirer');
+// const mysql = require('mysql2');
+
 const inquirer = require('inquirer');
-const mysql = require('mysql2');
+const { viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole } = require('./db');
 
 function startApp() {
     inquirer
