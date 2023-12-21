@@ -9,4 +9,4 @@ const updateEmployeeRoleQuery = 'UPDATE employees SET role_id = ? WHERE employee
 
 // Similar queries for addRole, addEmployee, and updateEmployeeRole
 
-module.exports = { viewDepartmentsQuery, viewRolesQuery, viewEmployeesQuery, addDepartmentQuery, /* addRoleQuery, addEmployeeQuery, updateEmployeeRoleQuery */ };
+module.exports = { viewDepartmentsQuery, viewRolesQuery, viewEmployeesQuery, addDepartmentQuery, addRoleQuery, addEmployeeQuery, updateEmployeeRoleQuery  };
