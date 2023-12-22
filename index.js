@@ -3,9 +3,10 @@
 // const mysql = require('mysql2');
 
 const inquirer = require('inquirer');
-const { viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole } = require('./db/db');
+const { initializeDatabase, viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole } = require('./db/db');
 
-function startApp() {
+async function startApp() {
+  await initializeDatabase();
     inquirer
       .prompt([
         {
