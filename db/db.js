@@ -53,7 +53,7 @@ async function addDepartment() {
 }
 async function addRole() {
   try {
-    // Prompt user for role information
+    //Ask user for information
     const roleInfo = await inquirer.prompt([
       { type: 'input', name: 'title', message: 'Enter the title of the role:' },
       { type: 'input', name: 'salary', message: 'Enter the salary for the role:' },
@@ -71,7 +71,7 @@ async function addRole() {
 
 async function addEmployee() {
   try {
-    // Prompt user for employee information
+    //Ask user for employee information
     const employeeInfo = await inquirer.prompt([
       { type: 'input', name: 'firstName', message: 'Enter the first name of the employee:' },
       { type: 'input', name: 'lastName', message: 'Enter the last name of the employee:' },
@@ -106,7 +106,7 @@ async function updateEmployeeRole() {
       choices: employees.map((employee) => ({ name: employee.employee_name, value: employee.employee_id })),
     });
 
-    // Prompt user for the new role ID
+    //New ID from user
     const newRoleId = await inquirer.prompt({ type: 'input', name: 'newRoleId', message: 'Enter the new role ID for the employee:' });
 
     // Execute the updateEmployeeRoleQuery with user-provided information
@@ -118,6 +118,6 @@ async function updateEmployeeRole() {
   }
 }
   
-  // Similar functions for addRole, addEmployee, and updateEmployeeRole
+
   
-  module.exports = { initializeDatabase,viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole  };
+module.exports = { initializeDatabase,viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole  };
