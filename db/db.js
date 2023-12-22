@@ -69,6 +69,30 @@ async function addRole() {
   }
 }
 
+async function addEmployee() {
+  try {
+    // Prompt user for employee information
+    const employeeInfo = await inquirer.prompt([
+      { type: 'input', name: 'firstName', message: 'Enter the first name of the employee:' },
+      { type: 'input', name: 'lastName', message: 'Enter the last name of the employee:' },
+      { type: 'input', name: 'roleId', message: 'Enter the role ID for the employee:' },
+      { type: 'input', name: 'managerId', message: 'Enter the manager ID for the employee (optional):' },
+    ]);
+
+    // Execute the addEmployeeQuery with user-provided information
+    await executeQuery(addEmployeeQuery, [
+      employeeInfo.firstName,
+      employeeInfo.lastName,
+      employeeInfo.roleId,
+      employeeInfo.managerId || null, // If managerId is not provided, set it to null
+    ]);
+
+    console.log('Employee added successfully!');
+  } catch (error) {
+    console.error('Error adding employee:', error);
+  }
+}
+
   
   // Similar functions for addRole, addEmployee, and updateEmployeeRole
   
