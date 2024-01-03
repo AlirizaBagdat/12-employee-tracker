@@ -4,10 +4,10 @@ const mysql = require('mysql2/promise');
 const { viewDepartmentsQuery, viewRolesQuery, viewEmployeesQuery, addDepartmentQuery, addRoleQuery, addEmployeeQuery, updateEmployeeRoleQuery } = require('./queries');
 
 const connection = mysql.createConnection({
-  host: 'your_host',
-  user: 'your_username',
-  password: 'your_password',
-  database: 'your_database',
+  host: 'localhost',
+  user: 'root',
+  // password: 'password',
+  // database: 'employee_database_db',
 });
 
 async function executeQuery(query, params) {
@@ -17,11 +17,11 @@ async function executeQuery(query, params) {
 async function initializeDatabase() {
   try {
     // Read and execute the schema.sql file
-    const schemaSql = fs.readFileSync('./path/to/schema.sql', 'utf8');
+    const schemaSql = fs.readFileSync('schema.sql', 'utf8');
     await connection.execute(schemaSql);
 
     // Read and execute the seeds.sql file
-    const seedsSql = fs.readFileSync('./path/to/seeds.sql', 'utf8');
+    const seedsSql = fs.readFileSync('seeds.sql', 'utf8');
     await connection.execute(seedsSql);
 
     console.log('Schema and seeds executed successfully.');
