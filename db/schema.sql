@@ -5,14 +5,14 @@ CREATE DATABASE employee_tracker_db;
 USE employee_tracker_db;
 
 
---Creating table for department
+
 CREATE TABLE department (
     id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(30) NOT NULL,
     PRIMARY KEY (id)
 );
 
---Creating table for roles
+
 CREATE TABLE roles (
     id INT AUTO_INCREMENT NOT NULL,
     title VARCHAR(30) NOT NULL,
@@ -23,7 +23,6 @@ CREATE TABLE roles (
     REFERENCES department (id)
 );
 
---Creating table for employee
 CREATE TABLE employee (
     id INT AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(30) NOT NULL,
